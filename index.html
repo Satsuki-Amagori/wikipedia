@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>卓世界観</title>
     <link rel="stylesheet" href="style.css">
+    <script src="search.js" defer></script>
 </head>
 <body>
     <header>
@@ -17,6 +18,10 @@
         </nav>
     </header>
     <main>
+        <h1>サイト内検索</h1>
+        <input type="text" id="search-box" placeholder="検索ワードを入力">
+        <button onclick="search()">検索</button>
+        <div id="results"></div>
         <p>このサイトは雨氷卓の世界観をまとめた百科事典です。</p>
     </main>
 </body>
