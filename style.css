@@ -1,7 +1,13 @@
+/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+
+/* ベース設定 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: 'Kosugi Maru', sans-serif;
     line-height: 1.8;
@@ -9,34 +15,51 @@ body {
     color: #333;
     margin: 0;
     padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+/* メインコンテンツ */
 .container {
+    width: 90%;
     max-width: 900px;
-    margin: 50px auto;
     background: #fff;
     padding: 30px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.6s ease-in-out forwards;
 }
+
+/* タイトル */
 h1 {
     color: #222;
     text-align: center;
     font-size: 2rem;
     margin-bottom: 10px;
 }
+
+/* 見出し */
 h2 {
-    color: #444;
+    color: #0077cc;
     border-left: 5px solid #0077cc;
     padding-left: 10px;
     font-size: 1.4rem;
     margin-top: 20px;
 }
+
+/* テキスト */
 p {
     font-size: 1rem;
     color: #555;
     text-align: justify;
     margin-bottom: 15px;
 }
+
+/* フッター */
 .footer {
     text-align: center;
     font-size: 1rem;
@@ -44,13 +67,56 @@ p {
     margin-top: 30px;
     padding-top: 20px;
     border-top: 1px solid #ddd;
+    width: 100%;
+    max-width: 900px;
 }
+
 .footer a {
     color: #0077cc;
     text-decoration: none;
     font-weight: bold;
-}
-.footer a:hover {
-    text-decoration: underline;
+    transition: color 0.3s;
 }
 
+.footer a:hover {
+    text-decoration: underline;
+    color: #0055aa;
+}
+
+/* ボタン */
+.button {
+    display: inline-block;
+    background: #0077cc;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.button:hover {
+    background: #0055aa;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* フェードインアニメーション */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
