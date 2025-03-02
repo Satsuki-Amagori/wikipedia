@@ -1,105 +1,77 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
-
-/* 全体の基本設定 */
+/* 全体の設定 */
 body {
-    font-family: 'Arial', sans-serif; /* 使いたいフォントを設定 */
-    font-size: 16px; /* 基本のフォントサイズ */
-    line-height: 1.6; /* 適切な行間 */
-    color: #333; /* 文字色 */
-    background-color: #f8f8f8; /* 背景色 */
+    font-family: 'Yuji Syuku', serif; /* 和風の手書き風フォント */
+    background-color: #f0f8ff; /* 明るい青系の背景 */
+    color: #000; /* 本文は黒 */
     margin: 0;
     padding: 0;
+    line-height: 1.8; /* 行間を快適に */
 }
 
-/* コンテンツの幅と配置 */
+/* コンテンツエリアの設定 */
 .container {
-    width: 90%; /* 画面幅の90% */
-    max-width: 800px; /* 最大幅を設定 */
-    margin: 0 auto; /* 中央配置 */
+    width: 90%; /* デバイスの90%を文章エリアに */
+    max-width: 1200px; /* 最大幅の制限 */
+    margin: 20px auto; /* 左右中央寄せ、上部余白 */
     text-align: left; /* 左寄せ */
-    padding: 20px; /* 内側の余白 */
-    background-color: #fff; /* コンテンツ部分の背景色 */
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* ほんのり影をつける */
-    border-radius: 8px; /* 角を少し丸く */
 }
 
-/* タイトルや見出し */
-h1, h2 {
-    font-weight: bold; /* タイトルを強調 */
-    color: #222; /* 濃いめの文字色 */
-    margin-top: 20px; /* 上側の余白 */
-    margin-bottom: 10px; /* 下側の余白 */
+/* 見出しデザイン */
+h1, h2, h3 {
+    font-family: 'Yuji Syuku', serif;
+    color: #005faf; /* 明るい青系 */
+    border-bottom: 2px solid #005faf; /* 下線で区切り */
+    padding-bottom: 5px;
 }
 
-/* 本文 */
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.6em;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.4em;
+    margin-top: 20px;
+}
+
+/* 段落のスタイル */
 p {
-    margin-bottom: 10px; /* 段落の間隔を適度に設定 */
+    text-indent: 1em; /* 和文らしく一字下げ */
+    margin-bottom: 15px;
 }
 
 /* フッター */
 .footer {
-    text-align: center; /* 中央揃え */
-    margin-top: 20px; /* コンテンツとの間隔 */
+    text-align: center;
+    margin-top: 30px;
     padding: 10px;
-    background-color: #eee; /* フッターの背景色 */
-    border-radius: 8px;
+    background-color: #005faf;
+    color: white;
 }
 
 .footer a {
-    text-decoration: none; /* リンクの下線を消す */
-    color: #0073e6; /* 青系のリンク色 */
-    font-weight: bold;
-}
-
-.footer a:hover {
-    text-decoration: underline; /* ホバー時に下線 */
+    color: white;
+    text-decoration: none;
 }
 
 /* レスポンシブ対応 */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .container {
-        padding: 20px;
+        width: 95%; /* スマホではさらに広く */
     }
-
     h1 {
-        font-size: 1.8rem;
-        margin-bottom: 20px;
+        font-size: 1.8em;
     }
-
     h2 {
-        font-size: 1.3rem;
-        padding: 8px 12px;
+        font-size: 1.4em;
     }
-
-    p {
-        font-size: 1rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    h2 {
-        font-size: 1.2rem;
-        padding: 6px 10px;
-    }
-
-    p {
-        font-size: 0.95rem;
-    }
-}
-
-/* フェードインアニメーション */
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    h3 {
+        font-size: 1.2em;
     }
 }
