@@ -1,90 +1,59 @@
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap');
 
-/* ベース設定 */
-* {
-    box-sizing: border-box;
+/* 全体の基本設定 */
+body {
+    font-family: 'Arial', sans-serif; /* 使いたいフォントを設定 */
+    font-size: 16px; /* 基本のフォントサイズ */
+    line-height: 1.6; /* 適切な行間 */
+    color: #333; /* 文字色 */
+    background-color: #f8f8f8; /* 背景色 */
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Kosugi Maru', sans-serif;
-    line-height: 1.8; /* 行間を適度に調整 */
-    background-color: #faf8f5;
-    color: #333;
-    padding: 30px 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* メインコンテンツ */
+/* コンテンツの幅と配置 */
 .container {
-    width: 90%;
-    max-width: 900px;
-    background: #fff;
-    padding: 30px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    margin-top: 30px;
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeIn 0.6s ease-in-out forwards;
-    text-align: left; /* 左揃えに設定 */
+    width: 90%; /* 画面幅の90% */
+    max-width: 800px; /* 最大幅を設定 */
+    margin: 0 auto; /* 中央配置 */
+    text-align: left; /* 左寄せ */
+    padding: 20px; /* 内側の余白 */
+    background-color: #fff; /* コンテンツ部分の背景色 */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* ほんのり影をつける */
+    border-radius: 8px; /* 角を少し丸く */
 }
 
-/* タイトル */
-h1 {
-    color: #333;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 25px;
-    font-weight: bold;
+/* タイトルや見出し */
+h1, h2 {
+    font-weight: bold; /* タイトルを強調 */
+    color: #222; /* 濃いめの文字色 */
+    margin-top: 20px; /* 上側の余白 */
+    margin-bottom: 10px; /* 下側の余白 */
 }
 
-/* 見出し */
-h2 {
-    color: #4a90e2;
-    background: rgba(74, 144, 226, 0.1);
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 1.4rem;
-    margin-top: 25px;
-    margin-bottom: 10px;
-    text-align: left; /* 左揃えに設定 */
-}
-
-/* テキスト */
+/* 本文 */
 p {
-    font-size: 1.1rem;
-    color: #444;
-    text-align: justify;
-    margin-bottom: 15px; /* 適度な間隔を確保 */
+    margin-bottom: 10px; /* 段落の間隔を適度に設定 */
 }
 
 /* フッター */
 .footer {
-    text-align: center;
-    font-size: 1rem;
-    color: #4a90e2;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #ddd;
-    width: 100%;
-    max-width: 900px;
+    text-align: center; /* 中央揃え */
+    margin-top: 20px; /* コンテンツとの間隔 */
+    padding: 10px;
+    background-color: #eee; /* フッターの背景色 */
+    border-radius: 8px;
 }
 
 .footer a {
-    color: #4a90e2;
-    text-decoration: none;
+    text-decoration: none; /* リンクの下線を消す */
+    color: #0073e6; /* 青系のリンク色 */
     font-weight: bold;
-    transition: color 0.3s;
 }
 
 .footer a:hover {
-    text-decoration: underline;
-    color: #357ab8;
+    text-decoration: underline; /* ホバー時に下線 */
 }
 
 /* レスポンシブ対応 */
