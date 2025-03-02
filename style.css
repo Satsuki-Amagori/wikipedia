@@ -1,58 +1,83 @@
-/* Google Fonts の読み込み（和風フォント） */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
-
+/* 全体の設定 */
 body {
-    font-family: 'Noto Sans JP', sans-serif;
-    background-color: #f5f9ff; /* 優しい青系の背景 */
-    color: #333;
+    font-family: 'Yuji Syuku', serif; /* 和風の手書き風フォント */
+    background-color: #f0f8ff; /* 明るい青系の背景 */
+    color: #000; /* 本文は黒 */
     margin: 0;
     padding: 0;
+    line-height: 1.8; /* 行間を快適に */
 }
 
+/* コンテナの設定 */
 .container {
-    width: 90%;
-    max-width: 900px;
-    margin: 20px auto;
-    text-align: left;
-    background: white;
+    width: 90%; /* デバイスの90%を文章エリアに */
+    max-width: 1200px; /* 最大幅の制限 */
+    margin: 20px auto; /* 左右中央寄せ、上部余白 */
+    text-align: left; /* 左寄せ */
     padding: 20px;
+    background: white;
     border-radius: 10px;
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    border-bottom: 3px solid #5a8fd8; /* 和風な青のアクセント */
+/* 見出しデザイン */
+h1, h2, h3 {
+    font-family: 'Yuji Syuku', serif;
+    color: #005faf; /* 明るい青系 */
+    border-bottom: 2px solid #005faf; /* 下線で区切り */
     padding-bottom: 5px;
 }
 
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 h2 {
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-left: 5px solid #5a8fd8; /* 和風な縦ライン */
-    padding-left: 10px;
+    font-size: 1.6em;
     margin-top: 30px;
 }
 
-p {
-    font-size: 1rem;
-    line-height: 1.8;
-    margin: 10px 0;
+h3 {
+    font-size: 1.4em;
+    margin-top: 20px;
 }
 
+/* 段落のスタイル */
+p {
+    text-indent: 1em; /* 和文らしく一字下げ */
+    margin-bottom: 15px;
+}
+
+/* フッター */
 .footer {
-    margin-top: 20px;
-    padding: 10px 0;
     text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #005faf;
+    color: white;
+    border-radius: 0 0 10px 10px;
 }
 
 .footer a {
+    color: white;
     text-decoration: none;
-    color: #5a8fd8;
-    font-weight: bold;
 }
 
-.footer a:hover {
-    text-decoration: underline;
+/* レスポンシブ対応 */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 95%; /* スマホではさらに広く */
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
 }
