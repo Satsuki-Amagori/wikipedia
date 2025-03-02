@@ -7,24 +7,35 @@
     <link rel="stylesheet" href="https://satsuki-amagori.github.io/wikipedia/style.css">
 </head>
 <body>
-    <header>
-        <h1>雨氷卓世界観百科</h1>
-        <nav>
-            <ul>
-                <li>ダイスロールは<a href="https://satsuki-amagori.github.io/dice-roller/">こちら</a>から</li>
-                <li>魔法検索エンジンは<a href="https://satsuki-amagori.github.io/magics/">こちら</a>から</li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>サイト内検索</h2>
-        <input type="text" id="search-box" placeholder="検索ワードを入力">
-        <button onclick="search()">検索</button>
-        <script src="search.js" defer></script>
-        <div id="results"></div>
-        <p>現在、<b>３件</b>の記事が投稿されています（手動で変えてます）</p>
-        <p>このサイトは雨氷卓の世界観をまとめた百科事典です。</p>
-    </main>
-    <script src="/wikipedia/footer.js"></script>
+    <div class="container">
+        <header>
+            <h1>雨氷卓世界観百科</h1>
+            <nav>
+                <ul>
+                    <li><a href="https://satsuki-amagori.github.io/dice-roller/">ダイスロールはこちら</a></li>
+                    <li><a href="https://satsuki-amagori.github.io/magics/">魔法検索エンジンはこちら</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="search-section">
+                <h2>サイト内検索</h2>
+                <input type="text" id="search-box" placeholder="検索ワードを入力">
+                <button onclick="search()">検索</button>
+                <script src="search.js" defer></script>
+                <div id="results"></div>
+            </section>
+
+            <section class="site-info">
+                <p>現在、<b>３件</b>の記事が投稿されています（手動で変えてます）</p>
+                <p>このサイトは雨氷卓の世界観をまとめた百科事典です。</p>
+            </section>
+        </main>
+
+        <footer>
+            <script src="/wikipedia/footer.js"></script>
+        </footer>
+    </div>
 </body>
 </html>
