@@ -1,49 +1,47 @@
-async function fetchMetadata(url) {
-    try {
-        const response = await fetch(url);
-        const text = await response.text();
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(text, "text/html");
-        const keywordsMeta = doc.querySelector("meta[name='keywords']");
-        const keywords = keywordsMeta ? keywordsMeta.content.split(",") : [];
-        return { url, keywords };
-    } catch (error) {
-        console.error(`Error fetching ${url}:`, error);
-        return { url, keywords: [] };
-    }
-}
+const basePaths = [
+    "/wikipedia/pages/facility/",
+    "/wikipedia/pages/person/",
+    "/wikipedia/pages/concept/",
+    "/wikipedia/pages/history/"
+];
 
-async function loadPages() {
-    const response = await fetch("sitemap.json");
-    const pages = await response.json();
-    const pageData = await Promise.all(pages.map(fetchMetadata));
-    return pageData;
+async function checkPageExists(pageName) {
+    for (const basePath of basePaths) {
+        const url = `${basePath}${pageName}.html`;
+        try {
+            const response = await fetch(url, { method: 'HEAD' });
+            if (response.ok) {
+                return url; // 最初に見つかったページのURLを返す
+            }
+        } catch (error) {
+            console.error(`Error checking ${url}:`, error);
+        }
+    }
+    return null; // どこにも見つからなかった場合
 }
 
 async function search() {
-    const query = document.getElementById("search-box").value.trim().toLowerCase();
+    const query = document.getElementById("search-box").value.trim();
     const resultsContainer = document.getElementById("results");
     resultsContainer.innerHTML = "";
 
     if (query === "") return;
 
-    const pages = await loadPages();
-    const results = pages.filter(page =>
-        page.keywords.some(keyword => keyword.toLowerCase().includes(query))
-    );
-
-    if (results.length === 0) {
-        resultsContainer.innerHTML = "<p>該当するページが見つかりません。</p>";
+    const pageUrl = await checkPageExists(query);
+    
+    if (pageUrl) {
+        const link = document.createElement("a");
+        link.href = pageUrl;
+        link.textContent = query; // URLではなく検索語句を表示
+        resultsContainer.appendChild(link);
     } else {
-        results.forEach(page => {
-            const fileName = page.url.split("/").pop().replace(".html", ""); // ファイル名のみ取得
-            const link = document.createElement("a");
-            link.href = page.url;
-            link.textContent = fileName;
-            resultsContainer.appendChild(link);
-            resultsContainer.appendChild(document.createElement("br"));
-        });
+        resultsContainer.innerHTML = "<p>該当するページが見つかりません。</p>";
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadPages);
+document.getElementById("search-button").addEventListener("click", search);
+document.getElementById("search-box").addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        search();
+    }
+});
