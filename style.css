@@ -21,7 +21,7 @@ body {
 }
 
 /* 見出しデザイン */
-h1, h2, {
+h1, h2 {
     font-family: 'Yuji Syuku', serif;
     color: #005faf; /* 明るい青系 */
     border-bottom: 2px solid #005faf; /* 下線で区切り */
