@@ -41,9 +41,20 @@ h2 {
 
 h3 {
     color: #0095A4; /* 濃い浅葱いろ */
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+    font-weight:normal;
+}
+
+h4 {
+    color: #223670; /* 紺！ */
     font-size: 1.4em;
     text-align: center;
     margin-top: 20px;
+    font-style:italic;
+    letter-spacing: 0.4em;
+    
 }
 
 /* 段落のスタイル */
